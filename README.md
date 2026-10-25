@@ -2,7 +2,9 @@
 
 **DeepSeek Harness 的电影感启动动画插件。** 深空星门 → 粒子鲸鱼 → 铬字揭幕 → 系统自检 → `SESSION ESTABLISHED`。约 13.6 秒，零外部请求，桌面端 / web profile 通用。
 
-仓库：<https://github.com/mnanyu/dsh-startup-cinematic>
+仓库：<https://github.com/mnanyu/dsh-startup-cinematic>  
+在线预览：<https://mnanyu.github.io/dsh-startup-cinematic/>  
+Release：<https://github.com/mnanyu/dsh-startup-cinematic/releases/tag/v1.0.0>
 
 ![最终锁定画面](preview.png)
 
@@ -130,7 +132,9 @@ npm run build
 
 ## 在线预览
 
-仓库根目录本身就是可部署的静态预览页。把 GitHub Pages 的源指向 `main` 分支根目录即可（`.nojekyll` 已加），无需构建。
+<https://mnanyu.github.io/dsh-startup-cinematic/>
+
+仓库根目录就是静态预览页，由 GitHub Pages 从 `main` 分支根目录构建（`.nojekyll` 已加），无需额外构建。
 
 ## 开发
 
