@@ -1,0 +1,58 @@
+{
+  "name": "dsh-startup-cinematic",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness 电影感启动动画：星门加速、粒子鲸鱼、铬字揭幕、系统自检、WebAudio 合成音效。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek-harness-desktop",
+    "startup",
+    "splash",
+    "boot-animation",
+    "cinematic"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "install.cmd"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs && node test/host-smoke.mjs && node --check lib/client.js && node --check lib/index.js",
+    "prepack": "npm run build"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "秋枫",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnanyu/dsh-startup-cinematic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mnanyu/dsh-startup-cinematic/issues"
+  },
+  "homepage": "https://github.com/mnanyu/dsh-startup-cinematic#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  }
+}

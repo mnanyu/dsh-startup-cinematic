@@ -1,0 +1,10 @@
+# dsh-startup-cinematic — DSH bundle patch
+#
+# Mounts the Host half into the current profile. The browser half is declared
+# in package.json -> dsh.client and assembled by the host automatically.
+#
+# Install:
+#   dsh plugin --profile desktop add ./dsh-startup-cinematic-1.0.0.tgz
+- insert:
+    - id: dsh-startup-cinematic
+      name: dsh-startup-cinematic

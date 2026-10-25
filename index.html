@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>DEEPSEEK HARNESS — BOOT SEQUENCE</title>
+<link rel="stylesheet" href="boot.css">
+</head>
+<body>
+<div id="boot" class="boot" data-phase="void">
+  <div class="background" aria-hidden="true">
+    <div class="nebula nebula-a"></div>
+    <div class="nebula nebula-b"></div>
+    <div class="eclipse"><i></i></div>
+    <div class="grid-floor"></div>
+  </div>
+
+  <canvas id="space" aria-hidden="true"></canvas>
+
+  <div class="cut" id="cut" aria-hidden="true"></div>
+
+  <div class="fx scanlines" aria-hidden="true"></div>
+  <div class="fx grain" aria-hidden="true"></div>
+  <div class="fx vignette" aria-hidden="true"></div>
+  <div id="flash" class="fx flash" aria-hidden="true"></div>
+  <div id="shockwave" class="shockwave" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <header class="hud hud-top">
+    <div class="hud-brand">
+      <span class="brand-dot"></span>
+      <span class="brand-name">DEEPSEEK</span>
+      <span class="dim">// HARNESS OS</span>
+    </div>
+    <div class="hud-center">
+      <span class="dim">BOOT SEQUENCE</span>
+      <span id="phaseNo" class="phase-no">01</span>
+      <span class="dim">/ 06</span>
+    </div>
+    <div class="hud-meta">
+      <span class="dim">BUILD</span>
+      <span>2026.10</span>
+      <span class="live"><i></i>LIVE</span>
+    </div>
+  </header>
+
+  <aside class="hud hud-left" aria-hidden="true">
+    <div class="rail-head"><span>NEURAL LINK</span><b>CH-07</b></div>
+    <div class="rail-bars" id="railBars"></div>
+    <div class="rail-stats">
+      <div><span>CORE</span><b id="statCore">--</b></div>
+      <div><span>MEM</span><b id="statMem">--</b></div>
+      <div><span>LINK</span><b id="statLink">--</b></div>
+    </div>
+  </aside>
+
+  <aside class="hud hud-right" aria-hidden="true">
+    <div class="hex" id="hexStream"></div>
+  </aside>
+
+  <div class="corners" aria-hidden="true">
+    <i class="corner tl"></i><i class="corner tr"></i>
+    <i class="corner bl"></i><i class="corner br"></i>
+  </div>
+
+  <main class="stage" id="stage">
+    <!-- 01 · VOID -->
+    <section class="scene scene-intro" id="sceneIntro">
+      <div class="intro-kicker">DEEP SPACE INITIALIZATION</div>
+      <div class="intro-line">
+        <span class="prompt">&gt;</span><span id="typeLine"></span><span class="caret"></span>
+      </div>
+      <div class="intro-sub">正在唤醒神经核心</div>
+      <div class="ignition-dot" aria-hidden="true"></div>
+    </section>
+
+    <!-- 02 / 03 · CORE -->
+    <section class="scene scene-core" id="sceneCore">
+      <div class="core-rings" aria-hidden="true">
+        <svg viewBox="0 0 600 600">
+          <g id="ringTicks"></g>
+          <circle class="ring ring-1" cx="300" cy="300" r="252"></circle>
+          <circle class="ring ring-2" cx="300" cy="300" r="228"></circle>
+          <circle class="ring ring-3" cx="300" cy="300" r="188"></circle>
+          <circle class="ring ring-4" cx="300" cy="300" r="152"></circle>
+          <path class="ring-arc" d="M 300 48 A 252 252 0 0 1 552 300"></path>
+          <path class="ring-arc ring-arc-b" d="M 300 552 A 252 252 0 0 1 48 300"></path>
+        </svg>
+        <div class="core-orb" aria-hidden="true"><i></i><b></b></div>
+      </div>
+      <div class="core-caption">
+        <span>NEURAL CORE</span><b id="corePct">00</b><em>%</em>
+      </div>
+      <div class="core-status" id="coreStatus">CALIBRATING PHASE ARRAY</div>
+    </section>
+
+    <!-- 04 · SIGIL -->
+    <section class="scene scene-brand" id="sceneBrand">
+      <div class="brand-halo" aria-hidden="true"></div>
+      <div class="brand-lockup">
+        <h1 class="wordmark" id="wordmark" aria-label="DEEPSEEK">
+          <span class="wm-layer wm-r" aria-hidden="true">DEEPSEEK</span>
+          <span class="wm-layer wm-b" aria-hidden="true">DEEPSEEK</span>
+          <span class="wm-layer wm-base" aria-hidden="true">DEEPSEEK</span>
+          <span class="wm-layer wm-shine" aria-hidden="true">DEEPSEEK</span>
+        </h1>
+        <div class="brand-rule"><i></i><span>深度求索</span><i></i></div>
+        <div class="brand-sub">HARNESS <span>//</span> INTELLIGENCE ENGINE</div>
+      </div>
+    </section>
+
+    <!-- 05 · SYSTEMS -->
+    <section class="scene scene-terminal" id="sceneTerminal">
+      <div class="terminal-panel">
+        <div class="term-head">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div class="term-title">DEEPSEEK HARNESS <span>//</span> SYSTEM BOOT</div>
+          <div class="term-id" id="termId">0x7F3A</div>
+        </div>
+        <div class="term-body">
+          <ul class="bootlog" id="bootlog"></ul>
+          <div class="term-meter">
+            <div class="meter-head"><span id="meterLabel">INITIALIZING</span><b><span id="meterPct">0</span><em>%</em></b></div>
+            <div class="meter-track"><i id="meterFill"></i><b class="meter-scan"></b></div>
+            <div class="meter-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="term-foot"><span>KERNEL 0.2.0</span><span id="termStatus">CALIBRATING</span><span>SECURE BOOT: ON</span></div>
+      </div>
+    </section>
+
+    <!-- 06 · HARNESS -->
+    <section class="scene scene-final" id="sceneFinal">
+      <div class="final-kicker"><i></i>SESSION ESTABLISHED<i></i></div>
+      <div class="final-title-wrap">
+        <div class="final-title" id="finalTitle" data-text="DEEPSEEK">DEEPSEEK</div>
+        <div class="final-title-2">HARNESS</div>
+      </div>
+      <div class="final-cn">深度求索 · 智能新生</div>
+      <div class="final-rule"></div>
+      <div class="final-welcome" id="welcome">WELCOME BACK, <b>OPERATOR</b></div>
+      <button class="enter" id="enterBtn" type="button" aria-label="进入系统">
+        <span class="enter-key">ENTER</span>
+        <span class="enter-text">进入系统</span>
+      </button>
+    </section>
+  </main>
+
+  <footer class="hud hud-bottom">
+    <div class="phase-name"><i></i><span id="phaseLabel">DEEP SPACE INITIALIZATION</span></div>
+    <div class="timeline" aria-hidden="true">
+      <div class="timeline-fill" id="timelineFill"></div>
+      <div class="timeline-knob" id="timelineKnob"></div>
+    </div>
+    <div class="boot-time"><span id="timeCode">00:00:00</span><span class="dim">/ T+</span><b id="timeSec">0.0</b><span class="dim">s</span></div>
+  </footer>
+
+  <div class="controls">
+    <button class="ctrl" id="soundBtn" type="button" aria-pressed="false" aria-label="声音开关">
+      <span class="ctrl-ico" id="soundIco">◌</span><span id="soundLabel">声音关闭</span>
+    </button>
+    <button class="ctrl" id="replayBtn" type="button" aria-label="重播启动动画">
+      <span class="ctrl-ico">↻</span><span>重播</span>
+    </button>
+    <button class="ctrl ctrl-skip" id="skipBtn" type="button" aria-label="跳过启动动画">
+      <span>跳过</span><span class="ctrl-ico">→</span>
+    </button>
+  </div>
+
+  <div class="audio-toast" id="audioToast">点击开启音效<span>CLICK TO ENABLE AUDIO</span></div>
+</div>
+
+<div class="after" id="after" aria-hidden="true">
+  <div class="after-grid" aria-hidden="true"></div>
+  <div class="after-inner">
+    <div class="after-kicker">DEEPSEEK HARNESS</div>
+    <div class="after-title">SYSTEM <span>ONLINE</span></div>
+    <p>启动序列已完成。你可以重新播放，或把这一套画面接进 DSH 的真实启动流程。</p>
+    <button id="againBtn" type="button">↻ 重新播放启动动画</button>
+  </div>
+</div>
+
+<script src="whale-path.js"></script>
+<script src="boot.js"></script>
+</body>
+</html>
